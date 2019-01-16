@@ -34,10 +34,9 @@ public class Customer {
         return this.funds >= car.getPrice();
     }
 
-    public Car sellCar() {
-            Car carToSell = ownedCars.get(0);
-            this.funds += carToSell.getPrice();
-            this.ownedCars.remove(carToSell);
-            return carToSell;
+    public Car sellCar(Car car) {
+            this.funds += car.getPrice();
+            this.ownedCars.remove(car);
+            return car;
     }
 }

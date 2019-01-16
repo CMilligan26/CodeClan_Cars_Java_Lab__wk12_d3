@@ -34,17 +34,15 @@ public class Dealership {
         return this.till;
     }
 
-    public void sellCar() {
-        this.dealers.get(0).sellCar(this.customers.get(0),this.till, this.cars.get(0));
-        this.getCars().remove(0);
+    public void sellCar(Customer customer, Car car, Dealer dealer) {
+        dealer.sellCar(customer,this.till, car);
+        this.getCars().remove(car);
     }
 
-    public void buyCar() {
-        Dealer dealer = this.dealers.get(0);
-        Customer customer = this.customers.get(0);
-       if ( dealer.buyCar(customer, this.till) ) {
-           Car carToBuy = customer.sellCar();
-           cars.add(carToBuy);
+    public void buyCar(Customer customer, Car car, Dealer dealer) {
+       if ( dealer.buyCar(this.till, car) ) {
+           customer.sellCar(car);
+           cars.add(car);
        }
     }
 

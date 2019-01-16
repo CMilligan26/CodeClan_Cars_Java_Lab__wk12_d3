@@ -60,7 +60,7 @@ public class CustomerTest {
     public void canSellCar() {
         hasNoCars();
         customer.buyCar(car);
-        customer.sellCar();
+        customer.sellCar(car);
         assertEquals(30, customer.getFunds());
         assertEquals(0, customer.getOwnedCars().size());
     }

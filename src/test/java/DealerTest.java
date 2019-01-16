@@ -47,9 +47,7 @@ public class DealerTest {
     public void canBuyCar() {
         dealer.sellCar(customer, till, car);
         assertEquals(1, customer.getOwnedCars().size());
-        assertEquals(true, dealer.buyCar(customer, till));
-        assertEquals(0, customer.getOwnedCars().size());
-        assertEquals(30, customer.getFunds());
+        assertEquals(true, dealer.buyCar(till, car));
         assertEquals(0, till.getMoney());
     }
 }

@@ -73,14 +73,14 @@ public class DealershipTest {
 
     @Test
     public void canSellCar() {
-        dealership.sellCar();
+        dealership.sellCar(customer, car, dealer);
         assertEquals(0, dealership.getCars().size());
     }
 
     @Test
     public void canBuyCar() {
-        dealership.sellCar();
-        dealership.buyCar();
+        dealership.sellCar(customer, car, dealer);
+        dealership.buyCar(customer, car, dealer);
         assertEquals(1, dealership.getCars().size());
     }
 
