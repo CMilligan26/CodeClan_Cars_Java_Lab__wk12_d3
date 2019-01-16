@@ -15,4 +15,8 @@ public class Till {
     public void addMoney(int income){
         money += income;
     }
+
+    public void removeMoney(int income) {
+        money -= income;
+    }
 }

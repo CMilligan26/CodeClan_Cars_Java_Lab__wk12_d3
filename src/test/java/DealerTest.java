@@ -42,4 +42,14 @@ public class DealerTest {
         assertEquals(20, customer.getFunds());
         assertEquals(10, till.getMoney());
     }
+
+    @Test
+    public void canBuyCar() {
+        dealer.sellCar(customer, till, car);
+        assertEquals(1, customer.getOwnedCars().size());
+        assertEquals(true, dealer.buyCar(customer, till));
+        assertEquals(0, customer.getOwnedCars().size());
+        assertEquals(30, customer.getFunds());
+        assertEquals(0, till.getMoney());
+    }
 }

@@ -33,4 +33,11 @@ public class Customer {
     public boolean canBuyCar(Car car) {
         return this.funds >= car.getPrice();
     }
+
+    public Car sellCar() {
+            Car carToSell = ownedCars.get(0);
+            this.funds += carToSell.getPrice();
+            this.ownedCars.remove(carToSell);
+            return carToSell;
+    }
 }

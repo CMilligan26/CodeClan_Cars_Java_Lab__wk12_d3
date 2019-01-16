@@ -23,4 +23,11 @@ public class TillTest {
         till.addMoney(10);
         assertEquals(10, till.getMoney());
     }
+
+    @Test
+    public void canRemoveMoney(){
+        till.addMoney(10);
+        till.removeMoney(10);
+        assertEquals(0, till.getMoney());
+    }
 }

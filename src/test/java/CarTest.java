@@ -50,4 +50,10 @@ public class CarTest {
     public void hasType(){
         assertEquals("Hybrid", car.getType());
     }
+
+    @Test
+    public void canAddDamage(){
+        car.addDamage(2);
+        assertEquals(8, car.getPrice());
+    }
 }

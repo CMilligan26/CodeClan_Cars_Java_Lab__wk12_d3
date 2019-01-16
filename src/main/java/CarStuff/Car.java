@@ -37,4 +37,12 @@ public class Car {
     public String getType() {
         return type;
     }
+
+    public void addDamage(int damageCost) {
+        price -= damageCost;
+    }
+
+    public void repair(int repairCost){
+        price += repairCost;
+    }
 }
